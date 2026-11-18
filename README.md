@@ -2,7 +2,8 @@
 
 **Proyecto de Introducción a la Programación Científica**  
 **Estudiante:** Juan Diego Pasos Gómez  
-**Notebook:** `notebooks/analisis.ipynb`
+
+**Notebook:** **notebooks/analisis.ipynb**
 
 ## ¿De qué trata este trabajo?
 
@@ -17,29 +18,29 @@ El archivo tiene **3.250 filas y 23 columnas**. Cada fila corresponde a un estud
 
 | Columna | Tipo | Qué contiene |
 |---|---|---|
-| `id_estudiante` | Texto | Identificador anónimo del estudiante. |
-| `municipio` | Categórica | Municipio donde está el colegio. |
-| `zona` | Categórica | Zona urbana o rural. |
-| `estrato` | Entero | Estrato de la vivienda, de 1 a 6. |
-| `tipo_colegio` | Categórica | Oficial o privado. |
-| `jornada` | Categórica | Mañana, tarde, única, completa, nocturna o sabatina. |
-| `sexo` | Categórica | F o M. |
-| `edad` | Entero | Edad al presentar la prueba. |
-| `educacion_madre` | Categórica | Nivel educativo de la madre. |
-| `ingreso_familiar_smmlv` | Numérica | Ingreso familiar expresado en salarios mínimos. Se elimina durante la limpieza. |
-| `acceso_internet` | Categórica | Si tiene internet en casa. |
-| `computador_hogar` | Categórica | Si tiene computador en casa. |
-| `trabaja` | Categórica | Si trabaja además de estudiar. |
-| `horas_trabajo_semana` | Numérica | Horas que trabaja por semana. Queda vacío cuando no trabaja. |
-| `horas_estudio_semana` | Numérica | Horas de estudio por fuera de clase a la semana. |
-| `inasistencias_anio` | Numérica | Días que faltó al colegio durante el año. |
-| `preparacion_preicfes` | Categórica | Si tomó un curso preicfes. |
-| `puntaje_matematicas` | Numérica | Puntaje de matemáticas, de 0 a 100. |
-| `puntaje_lectura_critica` | Numérica | Puntaje de lectura crítica, de 0 a 100. |
-| `puntaje_ciencias_naturales` | Numérica | Puntaje de ciencias naturales, de 0 a 100. |
-| `puntaje_sociales_ciudadanas` | Numérica | Puntaje de sociales y ciudadanas, de 0 a 100. |
-| `puntaje_ingles` | Numérica | Puntaje de inglés, de 0 a 100. |
-| `puntaje_global` | Entero | Puntaje global, de 0 a 500. |
+| **id_estudiante** | Texto | Identificador anónimo del estudiante. |
+| **municipio** | Categórica | Municipio donde está el colegio. |
+| **zona** | Categórica | Zona urbana o rural. |
+| **estrato** | Entero | Estrato de la vivienda, de 1 a 6. |
+| **tipo_colegio** | Categórica | Oficial o privado. |
+| **jornada** | Categórica | Mañana, tarde, única, completa, nocturna o sabatina. |
+| **sexo** | Categórica | F o M. |
+| **edad** | Entero | Edad al presentar la prueba. |
+| **educacion_madre** | Categórica | Nivel educativo de la madre. |
+| **ingreso_familiar_smmlv** | Numérica | Ingreso familiar expresado en salarios mínimos. Se elimina durante la limpieza. |
+| **acceso_internet** | Categórica | Si tiene internet en casa. |
+| **computador_hogar** | Categórica | Si tiene computador en casa. |
+| **trabaja** | Categórica | Si trabaja además de estudiar. |
+| **horas_trabajo_semana** | Numérica | Horas que trabaja por semana. Queda vacío cuando no trabaja. |
+| **horas_estudio_semana** | Numérica | Horas de estudio por fuera de clase a la semana. |
+| **inasistencias_anio** | Numérica | Días que faltó al colegio durante el año. |
+| **preparacion_preicfes** | Categórica | Si tomó un curso preicfes. |
+| **puntaje_matematicas** | Numérica | Puntaje de matemáticas, de 0 a 100. |
+| **puntaje_lectura_critica** | Numérica | Puntaje de lectura crítica, de 0 a 100. |
+| **puntaje_ciencias_naturales** | Numérica | Puntaje de ciencias naturales, de 0 a 100. |
+| **puntaje_sociales_ciudadanas** | Numérica | Puntaje de sociales y ciudadanas, de 0 a 100. |
+| **puntaje_ingles** | Numérica | Puntaje de inglés, de 0 a 100. |
+| **puntaje_global** | Entero | Puntaje global, de 0 a 500. |
 
 ## Las preguntas que voy a responder
 
@@ -51,20 +52,20 @@ El archivo tiene **3.250 filas y 23 columnas**. Cada fila corresponde a un estud
 
 ## Qué encontré al revisar los datos
 
-Antes de comparar los puntajes, revisé si había datos vacíos, registros repetidos, categorías escritas de distintas formas o valores que no tuvieran sentido. No encontré filas duplicadas ni IDs repetidos. Tampoco aparecieron códigos como `-999`, valores negativos ni puntajes por fuera de los rangos esperados.
+Antes de comparar los puntajes, revisé si había datos vacíos, registros repetidos, categorías escritas de distintas formas o valores que no tuvieran sentido. No encontré filas duplicadas ni IDs repetidos. Tampoco aparecieron códigos como **-999**, valores negativos ni puntajes por fuera de los rangos esperados.
 
 Sí encontré algunas columnas con datos faltantes. No todos esos espacios significan que haya un error, así que revisé cada caso antes de decidir qué hacer:
 
 | Columna | Qué encontré | Qué hice |
 |---|---|---|
-| `ingreso_familiar_smmlv` | Faltan 1.845 datos, el **56,77 %**. | Quité la columna porque más de la mitad está vacía y no la necesito para responder las preguntas. El estrato permite hacer algunas comparaciones, aunque no reemplaza el dato exacto del ingreso. |
-| `horas_trabajo_semana` | Faltan 2.495 datos, el **76,77 %**. Coinciden con quienes dijeron que no trabajan. | Dejé esos espacios como están. Para esos estudiantes las horas de trabajo no aplican y completarlas sería inventar información. |
-| `horas_estudio_semana` | Faltan 270 datos. También hay dos registros de 90 horas y dos de 168 horas semanales. | Marqué esos cuatro valores como faltantes y completé los 274 espacios con la mediana según si el estudiante trabaja o no. La mediana fue de 7 horas para quienes no trabajan y 4 para quienes sí. |
-| `educacion_madre` | Faltan 344 datos, el **10,58 %**. | Completé los espacios con la categoría que más se repite dentro de cada estrato. La respuesta más común cambia entre estratos, por eso no usé una sola categoría para todos. |
-| `inasistencias_anio` | Faltan 227 datos, el **6,98 %**. | Los dejé vacíos. No necesito completar esta columna para responder las cinco preguntas. |
-| `puntaje_ingles` | Faltan 122 datos, el **3,75 %**. | Los dejé vacíos. Para calcular las correlaciones que incluyen inglés se usan los estudiantes que sí tienen los dos puntajes de esa pareja. |
-| `acceso_internet` | Faltan 92 datos, el **2,83 %**. | No los completé. En la comparación de internet solo cuento a quienes respondieron, porque no sé si los demás tienen el servicio. |
-| `edad` | Hay 264 estudiantes de 22 años o más. | Los conservé. Todos están en jornada nocturna o sabatina, así que parecen corresponder a estudiantes adultos y no a errores de digitación. |
+| **ingreso_familiar_smmlv** | Faltan 1.845 datos, el **56,77 %**. | Quité la columna porque más de la mitad está vacía y no la necesito para responder las preguntas. El estrato permite hacer algunas comparaciones, aunque no reemplaza el dato exacto del ingreso. |
+| **horas_trabajo_semana** | Faltan 2.495 datos, el **76,77 %**. Coinciden con quienes dijeron que no trabajan. | Dejé esos espacios como están. Para esos estudiantes las horas de trabajo no aplican y completarlas sería inventar información. |
+| **horas_estudio_semana** | Faltan 270 datos. También hay dos registros de 90 horas y dos de 168 horas semanales. | Marqué esos cuatro valores como faltantes y completé los 274 espacios con la mediana según si el estudiante trabaja o no. La mediana fue de 7 horas para quienes no trabajan y 4 para quienes sí. |
+| **educacion_madre** | Faltan 344 datos, el **10,58 %**. | Completé los espacios con la categoría que más se repite dentro de cada estrato. La respuesta más común cambia entre estratos, por eso no usé una sola categoría para todos. |
+| **inasistencias_anio** | Faltan 227 datos, el **6,98 %**. | Los dejé vacíos. No necesito completar esta columna para responder las cinco preguntas. |
+| **puntaje_ingles** | Faltan 122 datos, el **3,75 %**. | Los dejé vacíos. Para calcular las correlaciones que incluyen inglés se usan los estudiantes que sí tienen los dos puntajes de esa pareja. |
+| **acceso_internet** | Faltan 92 datos, el **2,83 %**. | No los completé. En la comparación de internet solo cuento a quienes respondieron, porque no sé si los demás tienen el servicio. |
+| **edad** | Hay 264 estudiantes de 22 años o más. | Los conservé. Todos están en jornada nocturna o sabatina, así que parecen corresponder a estudiantes adultos y no a errores de digitación. |
 
 El IQR marcó 105 registros de horas de estudio como posibles atípicos. Eso no quiere decir que todos estén mal. Por eso no los cambié en bloque. Me fijé en los valores más extremos: las dos respuestas de 90 horas y las dos de 168 horas semanales. Esos cuatro casos sí los marqué como faltantes antes de completar la columna.
 
@@ -116,8 +117,8 @@ Estos resultados sirven para orientar las gráficas de la segunda parte del proy
 
 ## Cómo abrir el notebook
 
-El archivo principal es `notebooks/analisis.ipynb`. El CSV debe estar en la carpeta `data/` con el nombre `educacion_saber11_antioquia_2025.csv`.
+El archivo principal es **notebooks/analisis.ipynb**. El CSV debe estar en la carpeta **data/** con el nombre **educacion_saber11_antioquia_2025.csv**.
 
-Si se abre el notebook en Google Colab, hay que subir el CSV a una carpeta llamada `data` en el panel de archivos. Después se puede ejecutar **Entorno de ejecución → Reiniciar y ejecutar todas** para comprobar que todo corre desde el principio.
+Si se abre el notebook en Google Colab, hay que subir el CSV a una carpeta llamada **data** en el panel de archivos. Después se puede ejecutar **Entorno de ejecución → Reiniciar y ejecutar todas** para comprobar que todo corre desde el principio.
 
-Para este análisis se utilizan `pandas` y `numpy`, que ya están disponibles en Google Colab.
+Para este análisis se utilizan **pandas** y **numpy**, que ya están disponibles en Google Colab.
