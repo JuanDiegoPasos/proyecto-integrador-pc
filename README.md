@@ -2,8 +2,8 @@
 
 **Proyecto de Introducción a la Programación Científica**  
 **Estudiante:** Juan Diego Pasos Gómez  
-
-**Notebook:** **notebooks/analisis.ipynb**
+**Grupo:** 6  
+**Notebook:** `notebooks/analisis.ipynb`
 
 ## ¿De qué trata este trabajo?
 
@@ -11,6 +11,7 @@ En este trabajo reviso los resultados de 3.250 estudiantes que presentaron una p
 
 Esto podría servir como punto de partida para pensar dónde hacen falta más apoyos académicos, tutorías o recursos para estudiar. La base no trae el nombre de cada colegio, así que no puedo señalar instituciones específicas. Lo que sí puedo hacer es comparar los resultados por estrato, zona, tipo de colegio y jornada.
 
+Hay algo importante: los datos son **sintéticos**. Los municipios existen, pero los registros se crearon para el curso. Por eso, lo que encuentre en el análisis solo describe esta base y no se debe tomar como una descripción de la educación en Antioquia.
 
 ## La base que utilicé
 
@@ -18,29 +19,29 @@ El archivo tiene **3.250 filas y 23 columnas**. Cada fila corresponde a un estud
 
 | Columna | Tipo | Qué contiene |
 |---|---|---|
-| **id_estudiante** | Texto | Identificador anónimo del estudiante. |
-| **municipio** | Categórica | Municipio donde está el colegio. |
-| **zona** | Categórica | Zona urbana o rural. |
-| **estrato** | Entero | Estrato de la vivienda, de 1 a 6. |
-| **tipo_colegio** | Categórica | Oficial o privado. |
-| **jornada** | Categórica | Mañana, tarde, única, completa, nocturna o sabatina. |
-| **sexo** | Categórica | F o M. |
-| **edad** | Entero | Edad al presentar la prueba. |
-| **educacion_madre** | Categórica | Nivel educativo de la madre. |
-| **ingreso_familiar_smmlv** | Numérica | Ingreso familiar expresado en salarios mínimos. Se elimina durante la limpieza. |
-| **acceso_internet** | Categórica | Si tiene internet en casa. |
-| **computador_hogar** | Categórica | Si tiene computador en casa. |
-| **trabaja** | Categórica | Si trabaja además de estudiar. |
-| **horas_trabajo_semana** | Numérica | Horas que trabaja por semana. Queda vacío cuando no trabaja. |
-| **horas_estudio_semana** | Numérica | Horas de estudio por fuera de clase a la semana. |
-| **inasistencias_anio** | Numérica | Días que faltó al colegio durante el año. |
-| **preparacion_preicfes** | Categórica | Si tomó un curso preicfes. |
-| **puntaje_matematicas** | Numérica | Puntaje de matemáticas, de 0 a 100. |
-| **puntaje_lectura_critica** | Numérica | Puntaje de lectura crítica, de 0 a 100. |
-| **puntaje_ciencias_naturales** | Numérica | Puntaje de ciencias naturales, de 0 a 100. |
-| **puntaje_sociales_ciudadanas** | Numérica | Puntaje de sociales y ciudadanas, de 0 a 100. |
-| **puntaje_ingles** | Numérica | Puntaje de inglés, de 0 a 100. |
-| **puntaje_global** | Entero | Puntaje global, de 0 a 500. |
+| `id_estudiante` | Texto | Identificador anónimo del estudiante. |
+| `municipio` | Categórica | Municipio donde está el colegio. |
+| `zona` | Categórica | Zona urbana o rural. |
+| `estrato` | Entero | Estrato de la vivienda, de 1 a 6. |
+| `tipo_colegio` | Categórica | Oficial o privado. |
+| `jornada` | Categórica | Mañana, tarde, única, completa, nocturna o sabatina. |
+| `sexo` | Categórica | F o M. |
+| `edad` | Entero | Edad al presentar la prueba. |
+| `educacion_madre` | Categórica | Nivel educativo de la madre. |
+| `ingreso_familiar_smmlv` | Numérica | Ingreso familiar expresado en salarios mínimos. Se elimina durante la limpieza. |
+| `acceso_internet` | Categórica | Si tiene internet en casa. |
+| `computador_hogar` | Categórica | Si tiene computador en casa. |
+| `trabaja` | Categórica | Si trabaja además de estudiar. |
+| `horas_trabajo_semana` | Numérica | Horas que trabaja por semana. Queda vacío cuando no trabaja. |
+| `horas_estudio_semana` | Numérica | Horas de estudio por fuera de clase a la semana. |
+| `inasistencias_anio` | Numérica | Días que faltó al colegio durante el año. |
+| `preparacion_preicfes` | Categórica | Si tomó un curso preicfes. |
+| `puntaje_matematicas` | Numérica | Puntaje de matemáticas, de 0 a 100. |
+| `puntaje_lectura_critica` | Numérica | Puntaje de lectura crítica, de 0 a 100. |
+| `puntaje_ciencias_naturales` | Numérica | Puntaje de ciencias naturales, de 0 a 100. |
+| `puntaje_sociales_ciudadanas` | Numérica | Puntaje de sociales y ciudadanas, de 0 a 100. |
+| `puntaje_ingles` | Numérica | Puntaje de inglés, de 0 a 100. |
+| `puntaje_global` | Entero | Puntaje global, de 0 a 500. |
 
 ## Las preguntas que voy a responder
 
@@ -52,20 +53,20 @@ El archivo tiene **3.250 filas y 23 columnas**. Cada fila corresponde a un estud
 
 ## Qué encontré al revisar los datos
 
-Antes de comparar los puntajes, revisé si había datos vacíos, registros repetidos, categorías escritas de distintas formas o valores que no tuvieran sentido. No encontré filas duplicadas ni IDs repetidos. Tampoco aparecieron códigos como **-999**, valores negativos ni puntajes por fuera de los rangos esperados.
+Antes de comparar los puntajes, revisé si había datos vacíos, registros repetidos, categorías escritas de distintas formas o valores que no tuvieran sentido. No encontré filas duplicadas ni IDs repetidos. Tampoco aparecieron códigos como `-999`, valores negativos ni puntajes por fuera de los rangos esperados.
 
 Sí encontré algunas columnas con datos faltantes. No todos esos espacios significan que haya un error, así que revisé cada caso antes de decidir qué hacer:
 
 | Columna | Qué encontré | Qué hice |
 |---|---|---|
-| **ingreso_familiar_smmlv** | Faltan 1.845 datos, el **56,77 %**. | Quité la columna porque más de la mitad está vacía y no la necesito para responder las preguntas. El estrato permite hacer algunas comparaciones, aunque no reemplaza el dato exacto del ingreso. |
-| **horas_trabajo_semana** | Faltan 2.495 datos, el **76,77 %**. Coinciden con quienes dijeron que no trabajan. | Dejé esos espacios como están. Para esos estudiantes las horas de trabajo no aplican y completarlas sería inventar información. |
-| **horas_estudio_semana** | Faltan 270 datos. También hay dos registros de 90 horas y dos de 168 horas semanales. | Marqué esos cuatro valores como faltantes y completé los 274 espacios con la mediana según si el estudiante trabaja o no. La mediana fue de 7 horas para quienes no trabajan y 4 para quienes sí. |
-| **educacion_madre** | Faltan 344 datos, el **10,58 %**. | Completé los espacios con la categoría que más se repite dentro de cada estrato. La respuesta más común cambia entre estratos, por eso no usé una sola categoría para todos. |
-| **inasistencias_anio** | Faltan 227 datos, el **6,98 %**. | Los dejé vacíos. No necesito completar esta columna para responder las cinco preguntas. |
-| **puntaje_ingles** | Faltan 122 datos, el **3,75 %**. | Los dejé vacíos. Para calcular las correlaciones que incluyen inglés se usan los estudiantes que sí tienen los dos puntajes de esa pareja. |
-| **acceso_internet** | Faltan 92 datos, el **2,83 %**. | No los completé. En la comparación de internet solo cuento a quienes respondieron, porque no sé si los demás tienen el servicio. |
-| **edad** | Hay 264 estudiantes de 22 años o más. | Los conservé. Todos están en jornada nocturna o sabatina, así que parecen corresponder a estudiantes adultos y no a errores de digitación. |
+| `ingreso_familiar_smmlv` | Faltan 1.845 datos, el **56,77 %**. | Quité la columna porque más de la mitad está vacía y no la necesito para responder las preguntas. El estrato permite hacer algunas comparaciones, aunque no reemplaza el dato exacto del ingreso. |
+| `horas_trabajo_semana` | Faltan 2.495 datos, el **76,77 %**. Coinciden con quienes dijeron que no trabajan. | Dejé esos espacios como están. Para esos estudiantes las horas de trabajo no aplican y completarlas sería inventar información. |
+| `horas_estudio_semana` | Faltan 270 datos. También hay dos registros de 90 horas y dos de 168 horas semanales. | Marqué esos cuatro valores como faltantes y completé los 274 espacios con la mediana según si el estudiante trabaja o no. La mediana fue de 7 horas para quienes no trabajan y 4 para quienes sí. |
+| `educacion_madre` | Faltan 344 datos, el **10,58 %**. | Completé los espacios con la categoría que más se repite dentro de cada estrato. La respuesta más común cambia entre estratos, por eso no usé una sola categoría para todos. |
+| `inasistencias_anio` | Faltan 227 datos, el **6,98 %**. | Los dejé vacíos. No necesito completar esta columna para responder las cinco preguntas. |
+| `puntaje_ingles` | Faltan 122 datos, el **3,75 %**. | Los dejé vacíos. Para calcular las correlaciones que incluyen inglés se usan los estudiantes que sí tienen los dos puntajes de esa pareja. |
+| `acceso_internet` | Faltan 92 datos, el **2,83 %**. | No los completé. En la comparación de internet solo cuento a quienes respondieron, porque no sé si los demás tienen el servicio. |
+| `edad` | Hay 264 estudiantes de 22 años o más. | Los conservé. Todos están en jornada nocturna o sabatina, así que parecen corresponder a estudiantes adultos y no a errores de digitación. |
 
 El IQR marcó 105 registros de horas de estudio como posibles atípicos. Eso no quiere decir que todos estén mal. Por eso no los cambié en bloque. Me fijé en los valores más extremos: las dos respuestas de 90 horas y las dos de 168 horas semanales. Esos cuatro casos sí los marqué como faltantes antes de completar la columna.
 
@@ -115,10 +116,81 @@ Las jornadas nocturna y sabatina llaman especialmente la atención. Tienen los p
 
 Estos resultados sirven para orientar las gráficas de la segunda parte del proyecto. No demuestran que una característica sea la causa de otra y tampoco representan la situación real de Antioquia, porque la base es sintética. Además, algunos grupos tienen pocos estudiantes, así que sus promedios se deben mirar con cuidado.
 
+
+## Las gráficas
+
+En la segunda parte del trabajo agregué ocho gráficas para mostrar de forma visual algunos resultados que ya había encontrado. Las tres primeras revisan una variable a la vez y las demás comparan dos o más variables.
+
+### 1. Distribución del puntaje global
+
+![Distribución del puntaje global](visualizaciones/distribucion-puntaje-global.png)
+
+Los resultados se concentran alrededor de los 260 puntos. Esto coincide con el promedio de 262,8 y la mediana de 262. La gráfica da una idea general de cómo se repartieron los puntajes antes de comparar los grupos.
+
+### 2. Cantidad de estudiantes por jornada
+
+![Estudiantes por jornada](visualizaciones/estudiantes-por-jornada.png)
+
+La jornada de la mañana reúne 1.086 estudiantes, mientras que la sabatina tiene 106 y la nocturna 214. Esta diferencia en el tamaño de los grupos es importante para interpretar sus promedios.
+
+### 3. Distribución general de los puntajes
+
+![Boxplot general](visualizaciones/boxplot-puntaje-global.png)
+
+La mediana está en 262 puntos y la mitad central de los estudiantes se encuentra aproximadamente entre 225 y 298 puntos. El boxplot resume la distribución y permite ubicar posibles valores alejados del grupo principal.
+
+### 4. Puntaje global según el estrato
+
+![Puntaje por estrato](visualizaciones/puntaje-global-por-estrato.png)
+
+El promedio pasa de 232,0 puntos en el estrato 1 a 393,1 en el estrato 6. La diferencia es grande, aunque los estratos 5 y 6 tienen pocos estudiantes, así que sus resultados se deben mirar con cuidado.
+
+### 5. Puntaje según internet y computador en casa
+
+![Puntaje según recursos del hogar](visualizaciones/puntaje-segun-recursos-hogar.png)
+
+Quienes tienen internet promedian 280,8 puntos, frente a 244,6 de quienes no tienen. Con el computador pasa algo parecido: 282,9 puntos para quienes tienen y 251,2 para quienes no. La diferencia aparece en los dos recursos, aunque no demuestra que sean la única razón de los resultados.
+
+### 6. Horas de trabajo y puntaje global
+
+![Horas de trabajo y puntaje](visualizaciones/horas-trabajo-vs-puntaje-global.png)
+
+La nube de puntos está bastante dispersa y la correlación es de -0,15. Esto muestra una relación negativa débil: el puntaje tiende a bajar un poco cuando aumentan las horas de trabajo, pero no ocurre de la misma manera con todos los estudiantes.
+
+### 7. Correlación entre las cinco áreas
+
+![Correlación entre áreas](visualizaciones/correlacion-entre-areas.png)
+
+Las correlaciones están entre 0,66 y 0,69. Todas son positivas, lo que indica que los buenos resultados en una materia suelen acompañarse de buenos resultados en las demás.
+
+### 8. Puntaje global según la jornada
+
+![Puntaje por jornada](visualizaciones/puntaje-global-por-jornada.png)
+
+Las jornadas sabatina y nocturna tienen los promedios más bajos, con 225,1 y 230,7 puntos. También son jornadas donde muchos estudiantes son adultos y trabajan, por lo que los apoyos podrían tener horarios más flexibles.
+
+## Conclusiones y recomendaciones
+
+Al mirar los resultados junto con las gráficas, hay tres grupos que vale la pena tener presentes dentro de esta base:
+
+1. **Estudiantes de estratos bajos y zonas rurales.** Sus promedios son menores que los de otros grupos. Sería útil revisar qué apoyos académicos y recursos tienen disponibles, en especial en colegios oficiales rurales.
+2. **Estudiantes sin internet o computador.** En la base tienen promedios inferiores a quienes cuentan con esos recursos. Se podrían considerar apoyos de conectividad o préstamo de equipos.
+3. **Estudiantes de jornadas nocturna y sabatina.** Son grupos con promedios más bajos y una alta proporción de estudiantes que trabajan. Podrían beneficiarse de tutorías y acompañamiento en horarios que se ajusten a sus responsabilidades.
+
+También se observa que los puntajes de las cinco áreas están relacionados entre sí. Por eso, el apoyo académico puede ser general y al mismo tiempo revisar las dificultades de cada materia.
+
+## Limitaciones
+
+Los datos son sintéticos, así que los resultados solo describen esta base y no la situación real de Antioquia. Además, las diferencias que aparecen no demuestran que una característica sea la causa de otra. La base tampoco tiene el nombre de los colegios, por lo que no permite señalar instituciones específicas.
+
+Algunos grupos tienen pocos estudiantes, como los estratos 5 y 6 y la jornada sabatina. Sus promedios pueden variar más que los de grupos grandes. También hay datos faltantes en algunas columnas, por lo que ciertos cálculos se hacen con menos estudiantes.
+
 ## Cómo abrir el notebook
 
-El archivo principal es **notebooks/analisis.ipynb**. El CSV debe estar en la carpeta **data/** con el nombre **educacion_saber11_antioquia_2025.csv**.
+El archivo principal es `notebooks/analisis.ipynb`. El CSV debe estar en la carpeta `data/` con el nombre `educacion_saber11_antioquia_2025.csv`.
 
-Si se abre el notebook en Google Colab, hay que subir el CSV a una carpeta llamada **data** en el panel de archivos. Después se puede ejecutar **Entorno de ejecución → Reiniciar y ejecutar todas** para comprobar que todo corre desde el principio.
+Si se abre el notebook en Google Colab, hay que subir el CSV a una carpeta llamada `data` en el panel de archivos. Después se puede ejecutar **Entorno de ejecución → Reiniciar y ejecutar todas** para comprobar que todo corre desde el principio.
 
-Para este análisis se utilizan **pandas** y **numpy**, que ya están disponibles en Google Colab.
+Las gráficas se guardan en la carpeta `visualizaciones/` en formato PNG. Para que aparezcan en el README de GitHub, hay que subir también esas imágenes a esa carpeta.
+
+Para este trabajo se utilizan `pandas`, `numpy`, `matplotlib` y `seaborn`, que están disponibles en Google Colab.
