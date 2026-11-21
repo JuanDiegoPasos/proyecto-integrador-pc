@@ -108,14 +108,6 @@ Al revisar quiénes estudian allí, se ve que son principalmente estudiantes adu
 
 Esto ayuda a entender por qué los apoyos para estas jornadas tendrían que considerar los horarios y el hecho de que muchos estudiantes también trabajan. Podrían servir tutorías en horarios flexibles. No puedo decir que la jornada sea la causa de los puntajes más bajos, porque también cambian la edad y la situación laboral de quienes estudian en ella.
 
-## Con qué me quedo de este análisis
-
-Al comparar los grupos, las diferencias más marcadas aparecen por estrato, zona y tipo de colegio. También se ven diferencias entre quienes tienen internet o computador y quienes no, y entre quienes trabajan y quienes no.
-
-Las jornadas nocturna y sabatina llaman especialmente la atención. Tienen los promedios más bajos y reúnen a estudiantes de mayor edad, muchos de los cuales también trabajan. Por eso, serían grupos importantes para tener en cuenta al pensar en tutorías y apoyos con horarios flexibles. La conectividad también aparece como un tema que vale la pena revisar.
-
-Estos resultados sirven para orientar las gráficas de la segunda parte del proyecto. No demuestran que una característica sea la causa de otra y tampoco representan la situación real de Antioquia, porque la base es sintética. Además, algunos grupos tienen pocos estudiantes, así que sus promedios se deben mirar con cuidado.
-
 
 ## Las gráficas
 
@@ -169,21 +161,13 @@ Las correlaciones están entre 0,66 y 0,69. Todas son positivas, lo que indica q
 
 Las jornadas sabatina y nocturna tienen los promedios más bajos, con 225,1 y 230,7 puntos. También son jornadas donde muchos estudiantes son adultos y trabajan, por lo que los apoyos podrían tener horarios más flexibles.
 
-## Conclusiones y recomendaciones
+## Conclusiones 
 
 Al mirar los resultados junto con las gráficas, hay tres grupos que vale la pena tener presentes dentro de esta base:
 
-1. **Estudiantes de estratos bajos y zonas rurales.** Sus promedios son menores que los de otros grupos. Sería útil revisar qué apoyos académicos y recursos tienen disponibles, en especial en colegios oficiales rurales.
-2. **Estudiantes sin internet o computador.** En la base tienen promedios inferiores a quienes cuentan con esos recursos. Se podrían considerar apoyos de conectividad o préstamo de equipos.
-3. **Estudiantes de jornadas nocturna y sabatina.** Son grupos con promedios más bajos y una alta proporción de estudiantes que trabajan. Podrían beneficiarse de tutorías y acompañamiento en horarios que se ajusten a sus responsabilidades.
-
-También se observa que los puntajes de las cinco áreas están relacionados entre sí. Por eso, el apoyo académico puede ser general y al mismo tiempo revisar las dificultades de cada materia.
-
-## Limitaciones
-
-Los datos son sintéticos, así que los resultados solo describen esta base y no la situación real de Antioquia. Además, las diferencias que aparecen no demuestran que una característica sea la causa de otra. La base tampoco tiene el nombre de los colegios, por lo que no permite señalar instituciones específicas.
-
-Algunos grupos tienen pocos estudiantes, como los estratos 5 y 6 y la jornada sabatina. Sus promedios pueden variar más que los de grupos grandes. También hay datos faltantes en algunas columnas, por lo que ciertos cálculos se hacen con menos estudiantes.
+**Estudiantes de estratos bajos y zonas rurales.** Sus promedios son menores que los de otros grupos. Sería útil revisar qué apoyos académicos y recursos tienen disponibles, en especial en colegios oficiales rurales.
+**Estudiantes sin internet o computador.** En la base tienen promedios inferiores a quienes cuentan con esos recursos. Se podrían considerar apoyos de conectividad o préstamo de equipos.
+**Estudiantes de jornadas nocturna y sabatina.** Son grupos con promedios más bajos y una alta proporción de estudiantes que trabajan. Podrían beneficiarse de tutorías y acompañamiento en horarios que se ajusten a sus responsabilidades.
 
 ## Cómo abrir el notebook
 
@@ -191,6 +175,4 @@ El archivo principal es `notebooks/analisis.ipynb`. El CSV debe estar en la carp
 
 Si se abre el notebook en Google Colab, hay que subir el CSV a una carpeta llamada `data` en el panel de archivos. Después se puede ejecutar **Entorno de ejecución → Reiniciar y ejecutar todas** para comprobar que todo corre desde el principio.
 
-Las gráficas se guardan en la carpeta `visualizaciones/` en formato PNG. Para que aparezcan en el README de GitHub, hay que subir también esas imágenes a esa carpeta.
-
-Para este trabajo se utilizan `pandas`, `numpy`, `matplotlib` y `seaborn`, que están disponibles en Google Colab.
+Las gráficas se guardan en la carpeta `visualizaciones/` en formato PNG.
